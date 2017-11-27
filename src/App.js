@@ -8,6 +8,7 @@ import {
 
 import LoginView from './views/LoginView';
 import ParkListView from './views/ParkListView';
+import FullscreenBackground from './components/FullscreenBackground';
 
 
 class App extends Component {
@@ -20,12 +21,11 @@ class App extends Component {
     return (
       <Router>
         <div>
+          <FullscreenBackground />
           <ul>
             <li><Link to="/">Login</Link></li>
             <li><Link to="/parks">Parks</Link></li>
           </ul>
-
-          <hr/>
 
           <Route exact path="/" component={LoginView}/>
           <Route path="/parks" component={ParkListView}/>
