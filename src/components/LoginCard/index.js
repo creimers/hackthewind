@@ -78,6 +78,7 @@ class LoginCard extends React.Component {
                 <Logo width={"250px"} />
                 <div>
                   <TextField
+                    autoFocus={true}
                     label="Email"
                     margin="normal"
                     fullWidth
