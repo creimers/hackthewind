@@ -6,11 +6,24 @@ import {
   Link
 } from 'react-router-dom'
 
+import styled from 'styled-components';
+
 import LoginView from './views/LoginView';
 import ParkListView from './views/ParkListView';
 
 import FullscreenBackground from './components/FullscreenBackground';
 import TopBar from './components/TopBar';
+
+const AppWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  widht: 100vw;
+`;
+
+const ViewWrapper = styled.div`
+  flex: 1;
+`;
 
 
 class App extends Component {
@@ -28,17 +41,14 @@ class App extends Component {
   render() {
     return (
       <Router>
-        <div>
+        <AppWrapper>
           <FullscreenBackground blurRadius={this.state.blurRadius} />
           <TopBar showBar={this.state.showAppBar} />
-          <ul>
-            <li><Link to="/">Login</Link></li>
-            <li><Link to="/parks">Parks</Link></li>
-          </ul>
-
-          <Route exact path="/" component={LoginView}/>
-          <Route path="/parks" component={ParkListView}/>
-        </div>
+          <ViewWrapper>
+            <Route exact path="/" component={LoginView}/>
+            <Route path="/parks" component={ParkListView}/>
+          </ViewWrapper>
+        </AppWrapper>
       </Router>
     );
   }
