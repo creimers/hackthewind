@@ -2,6 +2,8 @@ import React from 'react';
 import styled from 'styled-components';
 
 import AppBar from 'material-ui/AppBar';
+import IconButton from 'material-ui/IconButton';
+import PowerSettingsNewIcon from 'material-ui-icons/PowerSettingsNew';
 import Toolbar from 'material-ui/Toolbar';
 import { withRouter } from 'react-router'
 
@@ -20,8 +22,20 @@ const Inner = styled.div`
   margin-top: ${props => props.show? 0 : height * -1.5}px;
 `;
 
+const InnerToolbar = styled.div`
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  width: 100%;
+`;
+
 
 class TopBar extends React.Component {
+
+  logout = () => {
+    const { history } = this.props;
+    history.push('/');
+  }
   
   showToolbar = () => {
     const { location } = this.props;
@@ -36,6 +50,11 @@ class TopBar extends React.Component {
         <Inner show={showToolbar}>
           <AppBar position="static">
             <Toolbar>
+              <InnerToolbar>
+                <IconButton color="accent" onClick={this.logout}>
+                  <PowerSettingsNewIcon />
+                </IconButton>
+              </InnerToolbar>
             </Toolbar>
           </AppBar>
         </Inner>
