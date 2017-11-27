@@ -14,23 +14,22 @@ const BackgroundOuter = styled.div`
   z-index: -1;
 `;
 
+const BackgroundInner = styled.div`
+  height: 100vh;
+  width: 100vw;
+  background-image: url(${bgImage});
+  background-size: cover;
+  transform: scale(1.1);
+  transition: 1s filter linear;
+  filter: blur(${props => props.blurRadius}px);
+`;
+
 
 class FullscreenBackground extends React.Component {
   render() {
-
-    const BackgroundInner = styled.div`
-      height: 100vh;
-      width: 100vw;
-      background-image: url(${bgImage});
-      background-size: cover;
-      transform: scale(1.1);
-      transition: filter 1s;
-      filter: blur(${this.props.blurRadius || 0}px);
-    `;
-
     return (
       <BackgroundOuter>
-        <BackgroundInner />
+        <BackgroundInner blurRadius={this.props.blurRadius || 0}/>
       </BackgroundOuter>
     )
   }

@@ -8,7 +8,9 @@ import {
 
 import LoginView from './views/LoginView';
 import ParkListView from './views/ParkListView';
+
 import FullscreenBackground from './components/FullscreenBackground';
+import TopBar from './components/TopBar';
 
 
 class App extends Component {
@@ -18,11 +20,17 @@ class App extends Component {
     blurRadius: 20
   }
 
+  componentDidMount() {
+    setTimeout(() => this.setState({showAppBar: true}), 2000);
+    setTimeout(() => this.setState({blurRadius: 40}), 3000);
+  }
+
   render() {
     return (
       <Router>
         <div>
           <FullscreenBackground blurRadius={this.state.blurRadius} />
+          <TopBar showBar={this.state.showAppBar} />
           <ul>
             <li><Link to="/">Login</Link></li>
             <li><Link to="/parks">Parks</Link></li>
