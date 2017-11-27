@@ -5,6 +5,7 @@ import styled from 'styled-components';
 import Button from 'material-ui/Button';
 import Card, { CardActions, CardContent } from 'material-ui/Card';
 import { CircularProgress } from 'material-ui/Progress';
+import TextField from 'material-ui/TextField';
 import Transition from 'react-transition-group/Transition';
 
 import Logo from './../Logo';
@@ -14,7 +15,7 @@ import {
   logInSuccess
 } from './../../ducks/app';
 
-const duration = 750;
+const duration = 1000;
 
 const cardStyles = {
   width: '40vmin',
@@ -75,6 +76,21 @@ class LoginCard extends React.Component {
             <Card style={{...cardStyles, ...transitionStyles[state]}}>
               <CardContent style={contentStyles}>
                 <Logo width={"250px"} />
+                <div>
+                  <TextField
+                    label="Email"
+                    margin="normal"
+                    fullWidth
+                  />
+                </div>
+                <div>
+                  <TextField
+                    label="Password"
+                    margin="normal"
+                    type="password"
+                    fullWidth
+                  />
+                </div>
               </CardContent>
               <CardActions style={actionStyles}>
                 {this.renderProgress()}
