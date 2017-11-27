@@ -14,16 +14,20 @@ const BackgroundOuter = styled.div`
   z-index: -1;
 `;
 
-const BackgroundInner = styled.div`
-  height: 100vh;
-  width: 100vw;
-  background-image: url(${bgImage});
-  background-size: cover;
-  transform: scale(1.1);
-`;
 
 class FullscreenBackground extends React.Component {
   render() {
+
+    const BackgroundInner = styled.div`
+      height: 100vh;
+      width: 100vw;
+      background-image: url(${bgImage});
+      background-size: cover;
+      transform: scale(1.1);
+      transition: filter 1s;
+      filter: blur(${this.props.blurRadius || 0}px);
+    `;
+
     return (
       <BackgroundOuter>
         <BackgroundInner />
@@ -31,5 +35,7 @@ class FullscreenBackground extends React.Component {
     )
   }
 }
+
+// TODO: PropTypes
 
 export default FullscreenBackground;

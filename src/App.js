@@ -12,6 +12,7 @@ import FullscreenBackground from './components/FullscreenBackground';
 
 
 class App extends Component {
+
   state = {
     showAppBar: false,
     blurRadius: 20
@@ -21,7 +22,7 @@ class App extends Component {
     return (
       <Router>
         <div>
-          <FullscreenBackground />
+          <FullscreenBackground blurRadius={this.state.blurRadius} />
           <ul>
             <li><Link to="/">Login</Link></li>
             <li><Link to="/parks">Parks</Link></li>
