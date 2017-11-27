@@ -29,13 +29,7 @@ const ViewWrapper = styled.div`
 class App extends Component {
 
   state = {
-    showAppBar: false,
     blurRadius: 20
-  }
-
-  componentDidMount() {
-    setTimeout(() => this.setState({showAppBar: true}), 2000);
-    setTimeout(() => this.setState({blurRadius: 40}), 3000);
   }
 
   render() {
@@ -44,6 +38,12 @@ class App extends Component {
         <AppWrapper>
           <FullscreenBackground blurRadius={this.state.blurRadius} />
           <TopBar showBar={this.state.showAppBar} />
+          <div>
+            <ul>
+              <li><Link to="/">Login</Link></li>
+              <li><Link to="/parks">Parks</Link></li>
+            </ul>
+          </div>
           <ViewWrapper>
             <Route exact path="/" component={LoginView}/>
             <Route path="/parks" component={ParkListView}/>

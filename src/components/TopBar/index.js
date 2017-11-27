@@ -3,6 +3,7 @@ import styled from 'styled-components';
 
 import AppBar from 'material-ui/AppBar';
 import Toolbar from 'material-ui/Toolbar';
+import { withRouter } from 'react-router'
 
 
 const height = 64;
@@ -21,11 +22,18 @@ const Inner = styled.div`
 
 
 class TopBar extends React.Component {
+  
+  showToolbar = () => {
+    const { location } = this.props;
+    return location.pathname !== '/';
+  }
+
   render() {
+    const showToolbar = this.showToolbar();
 
     return (
       <Wrapper>
-        <Inner show={this.props.showBar}>
+        <Inner show={showToolbar}>
           <AppBar position="static">
             <Toolbar>
             </Toolbar>
@@ -37,4 +45,4 @@ class TopBar extends React.Component {
 }
 
 // TODO: PropTypes
-export default TopBar;
+export default withRouter(TopBar);
