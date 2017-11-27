@@ -37,12 +37,6 @@ class App extends Component {
         <AppWrapper>
           <FullscreenBackground />
           <TopBar />
-          <div>
-            <ul>
-              <li><Link to="/">Login</Link></li>
-              <li><Link to="/parks">Parks</Link></li>
-            </ul>
-          </div>
           <RouteWrapper>
             <Route exact path="/" component={LoginView}/>
             <Route path="/parks" component={ParkListView}/>

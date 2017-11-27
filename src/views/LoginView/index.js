@@ -2,12 +2,16 @@ import React from 'react';
 import { connect } from 'react-redux';
 import styled from 'styled-components';
 
-import { setBackgroundBlur } from '../../ducks/app';
+import LoginCard from './../../components/LoginCard';
+
+import { setBackgroundBlur, showLoginCard } from '../../ducks/app';
 
 
 const ViewWrapper = styled.div`
   flex: 1;
   display: flex;
+  justify-content: center;
+  align-items: center;
 `;
 
 
@@ -15,24 +19,28 @@ class LoginView extends React.Component {
 
   onClick = () => {
     this.props.setBackgroundBlur(50);
+    this.props.showLoginCard();
   }
+
 
   render() {
     return (
       <ViewWrapper onClick={this.onClick}>
-        <h1>Login</h1>
+        <LoginCard />
       </ViewWrapper>
     )
   }
 }
 
 const mapStateToProps = (state) => {
-  return {};
+  return {
+  };
 };
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    setBackgroundBlur: (blurRadius) => dispatch(setBackgroundBlur(blurRadius))
+    setBackgroundBlur: (blurRadius) => dispatch(setBackgroundBlur(blurRadius)),
+    showLoginCard: () => dispatch(showLoginCard()),
   };
 };
 
