@@ -18,36 +18,35 @@ const AppWrapper = styled.div`
   display: flex;
   flex-direction: column;
   height: 100vh;
-  widht: 100vw;
+  width: 100vw;
 `;
 
-const ViewWrapper = styled.div`
+const RouteWrapper = styled.div`
   flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow-y: scroll;
 `;
 
 
 class App extends Component {
 
-  state = {
-    blurRadius: 20
-  }
-
   render() {
     return (
       <Router>
         <AppWrapper>
-          <FullscreenBackground blurRadius={this.state.blurRadius} />
-          <TopBar showBar={this.state.showAppBar} />
+          <FullscreenBackground />
+          <TopBar />
           <div>
             <ul>
               <li><Link to="/">Login</Link></li>
               <li><Link to="/parks">Parks</Link></li>
             </ul>
           </div>
-          <ViewWrapper>
+          <RouteWrapper>
             <Route exact path="/" component={LoginView}/>
             <Route path="/parks" component={ParkListView}/>
-          </ViewWrapper>
+          </RouteWrapper>
         </AppWrapper>
       </Router>
     );

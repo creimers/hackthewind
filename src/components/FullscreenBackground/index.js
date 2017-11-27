@@ -1,4 +1,5 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import styled from 'styled-components';
 
 import bgImage from './bg.jpg';
@@ -35,6 +36,10 @@ class FullscreenBackground extends React.Component {
   }
 }
 
-// TODO: PropTypes
+const mapStateToProps = (state) => {
+  return {
+    blurRadius: state.app.backgroundBlurRadius
+  };
+};
 
-export default FullscreenBackground;
+export default connect(mapStateToProps)(FullscreenBackground);
