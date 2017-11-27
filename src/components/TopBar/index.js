@@ -48,10 +48,10 @@ class TopBar extends React.Component {
     return (
       <Wrapper>
         <Inner show={showToolbar}>
-          <AppBar position="static">
+          <AppBar position="static" color="default">
             <Toolbar>
               <InnerToolbar>
-                <IconButton color="accent" onClick={this.logout}>
+                <IconButton color="primary" onClick={this.logout}>
                   <PowerSettingsNewIcon />
                 </IconButton>
               </InnerToolbar>
