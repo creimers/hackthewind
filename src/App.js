@@ -27,6 +27,8 @@ const RouteWrapper = styled.div`
   display: flex;
   flex-direction: column;
   overflow-y: scroll;
+  padding-left: 15px;
+  padding-right: 15px;
 `;
 
 

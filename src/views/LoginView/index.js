@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import styled from 'styled-components';
+import Grid from 'material-ui/Grid';
 
 import { backgroundBlurRadius } from './../../utils/constants';
 import LoginCard from './../../components/LoginCard';
@@ -27,7 +28,11 @@ class LoginView extends React.Component {
   render() {
     return (
       <ViewWrapper onClick={this.onClick}>
-        <LoginCard />
+        <Grid style={{display: 'flex', justifyContent: 'center'}}container>
+          <Grid item xs={12} sm={6} md={3}>
+            <LoginCard />
+          </Grid>
+        </Grid>
       </ViewWrapper>
     )
   }

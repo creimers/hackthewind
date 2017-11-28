@@ -18,8 +18,8 @@ import {
 const duration = 1000;
 
 const cardStyles = {
-  width: '40vmin',
-  height: '40vmin',
+  width: '100%',
+  height: '100%',
   display: 'flex',
   flexDirection: 'column',
   transition: `opacity ${duration}ms ease-in-out`,
