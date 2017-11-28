@@ -1,17 +1,22 @@
 import React from 'react';
 import Card, { CardContent } from 'material-ui/Card';
+import { connect } from 'react-redux';
+import { withRouter } from 'react-router'
 
 import ViewWrapper from './../../components/ViewWrapper';
 import SlideUp from './../../components/SlideUp';
+import { getParkName } from './../../utils/helpers';
 
 import Chart from './Chart'
 
 class ForecastView extends React.Component {
   render() {
+    const {match} = this.props;
+    const parkName = getParkName(this.props.parks, match.params.parkSlug)
     return (
       <ViewWrapper>
         <SlideUp>
-          <h1>Forecast Park Level</h1>
+          <h1>Power Forecast {parkName}</h1>
           <Card>
             <CardContent>
               <Chart />
@@ -23,4 +28,19 @@ class ForecastView extends React.Component {
   }
 }
 
-export default ForecastView
+const mapStateToProps = (state) => {
+  return {
+    parks: state.parks.parks
+  }
+}
+
+const mapDispatchToProps = (dispatch) => {
+  return {}
+}
+
+const connected = connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(ForecastView)
+
+export default withRouter(connected)
