@@ -57,8 +57,8 @@ class TopBar extends React.Component {
 
   renderDashboardIcons = () => {
     const { location } = this.props;
-    if (location.pathname.split('/').length >= 3) {
-      const parkSlug = location.pathname.split('/')[location.pathname.split('/').length - 1]
+    if (location.pathname.split('/').length >= 4) {
+      const parkSlug = location.pathname.split('/')[location.pathname.split('/').length - 2]
       return (
         <div>
           <IconButton color="primary" onClick={this.routeTo(`/parks/${parkSlug}/reporting`)}>
@@ -67,7 +67,7 @@ class TopBar extends React.Component {
           <IconButton color="primary" onClick={this.routeTo(`/parks/${parkSlug}/forecast`)}>
             <TimelineIcon />
           </IconButton>
-          <IconButton color="primary" onClick={this.routeTo(`/parks/${parkSlug}`)}>
+          <IconButton color="primary" onClick={this.routeTo(`/parks/${parkSlug}/dashboard`)}>
             <DashboardIcon />
           </IconButton>
           <IconButton color="primary" onClick={this.routeTo('/parks')}>

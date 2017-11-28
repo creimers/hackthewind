@@ -1,13 +1,16 @@
 import React from 'react';
+import ViewWrapper from './../../components/ViewWrapper';
 import SlideUp from './../../components/SlideUp';
 
 
 class ReportingView extends React.Component {
   render() {
     return (
-      <SlideUp>
-        <p>fet</p>
-      </SlideUp>  
+      <ViewWrapper>
+        <SlideUp>
+          <h1>Reporting</h1>
+        </SlideUp>  
+      </ViewWrapper>
     )
   }
 }

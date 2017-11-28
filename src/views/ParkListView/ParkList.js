@@ -13,7 +13,7 @@ class ParkList extends React.Component {
 
   goToParkDetail = slug => () => {
        const { history } = this.props;
-       history.push(`/parks/${slug}`);
+       history.push(`/parks/${slug}/dashboard`);
   }
 
   renderParkList = () => {

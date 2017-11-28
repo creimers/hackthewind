@@ -44,7 +44,7 @@ class App extends Component {
           <RouteWrapper>
             <Route exact path="/" component={LoginView}/>
             <Route exact path="/parks" component={ParkListView}/>
-            <Route exact path="/parks/:parkSlug" component={ParkDetailView}/>
+            <Route exact path="/parks/:parkSlug/dashboard" component={ParkDetailView}/>
             <Route exact path="/parks/:parkSlug/reporting" component={ReportingView}/>
             <Route exact path="/parks/:parkSlug/forecast" component={ForecastView}/>
           </RouteWrapper>
