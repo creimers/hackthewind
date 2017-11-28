@@ -19,6 +19,7 @@
   "scripts": {
     "start": "PORT=4000 react-scripts start",
     "build": "react-scripts build",
+    "postbuild": "surge -p /Users/creimers/Projekte/hackthewind/app/build/ -d hackthewind.surge.sh",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
   }
