@@ -9,6 +9,7 @@ import ViewWrapper from './../../components/ViewWrapper';
 import SlideUp from './../../components/SlideUp';
 import Widget from './Widget'
 
+import PowerWidget from './PowerWidget'
 
 
 class ParkDetailView extends React.Component {
@@ -21,25 +22,25 @@ class ParkDetailView extends React.Component {
           <Grid container>
 
             <Grid item xs={12} sm={6}>
-              <Widget>
+              <Widget title="Power">
+                <PowerWidget />
+              </Widget>
+            </Grid>
+
+            <Grid item xs={12} sm={6}>
+              <Widget title="Prediction Quality">
                 <p>affe</p>
               </Widget>
             </Grid>
 
             <Grid item xs={12} sm={6}>
-              <Widget>
+              <Widget title="Price">
                 <p>affe</p>
               </Widget>
             </Grid>
 
             <Grid item xs={12} sm={6}>
-              <Widget>
-                <p>affe</p>
-              </Widget>
-            </Grid>
-
-            <Grid item xs={12} sm={6}>
-              <Widget>
+              <Widget title="Storage">
                 <p>affe</p>
               </Widget>
             </Grid>

@@ -5,12 +5,13 @@ import blueGrey from 'material-ui/colors/blueGrey';
 import red from 'material-ui/colors/red';
 import blue from 'material-ui/colors/blue';
 
-// export const green = '#34C3A4';
+export const green = '#34C3A4';
 // export const grey = '#454545';
-// export const red = '#E6716D';
 // export const blue = '#00A2FF';
 
 export const darkBg = '#212121';
+export const colorTeal = '#009688';
+export const colorRed = '#E6716D';
 
 
 const theme = createMuiTheme({
