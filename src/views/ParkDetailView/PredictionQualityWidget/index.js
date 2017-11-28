@@ -29,7 +29,6 @@ class PredictionQuality extends React.Component {
   }
 
   randomizeQuality = () => {
-    const { quality } = this.state
     const randomBoolean = Math.random() >= 0.5;
     const randomFactor = (Math.random() / 10)
     let newQuality = randomBoolean ? defaultQuality * (1 + randomFactor) : defaultQuality * (1 - randomFactor)

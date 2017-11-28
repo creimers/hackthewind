@@ -3,7 +3,6 @@ import { MuiThemeProvider, createMuiTheme } from 'material-ui/styles';
 import teal from 'material-ui/colors/teal';
 import blueGrey from 'material-ui/colors/blueGrey';
 import red from 'material-ui/colors/red';
-import blue from 'material-ui/colors/blue';
 
 export const green = '#34C3A4';
 // export const grey = '#454545';

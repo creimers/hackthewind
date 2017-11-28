@@ -1,5 +1,4 @@
 import React from 'react';
-import List, { ListItem, ListItemIcon, ListItemText } from 'material-ui/List';
 import styled from 'styled-components';
 
 import ViewWrapper from './../../components/ViewWrapper';
