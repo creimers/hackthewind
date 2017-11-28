@@ -2,6 +2,7 @@ import React from 'react';
 import List, { ListItem, ListItemIcon, ListItemText } from 'material-ui/List';
 import styled from 'styled-components';
 
+import SlideUp from './../../components/SlideUp';
 import ParkList from './ParkList';
 
 const ListWrapper = styled.div`
@@ -13,7 +14,9 @@ class ParkListView extends React.Component {
   render() {
     return (
       <ListWrapper>
-        <ParkList />
+        <SlideUp>
+          <ParkList />
+        </SlideUp>
       </ListWrapper>
     )
   }
