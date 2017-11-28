@@ -1,9 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import ArrowDropUpIcon from 'material-ui-icons/ArrowDropUp';
-import ArrowDropDownIcon from 'material-ui-icons/ArrowDropDown';
-
 import { colorTeal } from './../../../utils/theme'
 import { colorRed } from './../../../utils/theme'
 
