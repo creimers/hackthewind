@@ -24,6 +24,7 @@ const BatteryBody = styled.div`
   height: 100%;
   border: 4px solid ${colorTeal};
   border-radius: 4px;
+  position: relative;
 `;
 
 const BatteryPin = styled.div`
@@ -36,8 +37,19 @@ const BatteryPin = styled.div`
 
 const BatteryFill = styled.div`
   height: 100%;
-  width: 80%;
-  background: rgba(0, 150, 136, 0.5)
+  width: 81%;
+  background: rgba(0, 150, 136, 0.3)
+`;
+
+const BatteryPercentage = styled.div`
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
 `;
 
 class StorageWidget extends React.Component {
@@ -47,6 +59,7 @@ class StorageWidget extends React.Component {
         <Battery>
           <BatteryBody>
             <BatteryFill />
+            <BatteryPercentage>81%</BatteryPercentage>
           </BatteryBody>
           <BatteryPin />
         </Battery>

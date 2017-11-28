@@ -7,7 +7,7 @@ const baseStyles = {
   transition: `all ${duration}ms`,
   opacity: 0,
   transform: 'translateY(100px)',
-  marginTop: '75px'
+  marginTop: '1em'
 }
 
 

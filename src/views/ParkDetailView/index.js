@@ -48,6 +48,12 @@ class ParkDetailView extends React.Component {
               </Widget>
             </Grid>
 
+            <Grid item xs={12} sm={6}>
+              <Widget title="What else?">
+
+              </Widget>
+            </Grid>
+
           </Grid>
         </ViewWrapper>
       </SlideUp>
