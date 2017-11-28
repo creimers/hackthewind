@@ -1,7 +1,9 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import styled from 'styled-components';
+import { withRouter } from 'react-router'
 
+import { backgroundBlurRadius } from './../../utils/constants';
 import bgImage from './bg.jpg';
 
 
@@ -27,10 +29,21 @@ const BackgroundInner = styled.div`
 
 
 class FullscreenBackground extends React.Component {
+  state = {
+    blurRadius: 0 
+  }
+
+  componentDidMount() {
+    const { location } = this.props;
+    if (location.pathname !== '/') {
+      this.setState({blurRadius: backgroundBlurRadius});
+    }
+  }
+
   render() {
     return (
       <BackgroundOuter>
-        <BackgroundInner blurRadius={this.props.blurRadius || 0}/>
+        <BackgroundInner blurRadius={this.props.blurRadius || this.state.blurRadius || 0} />
       </BackgroundOuter>
     )
   }
@@ -42,4 +55,5 @@ const mapStateToProps = (state) => {
   };
 };
 
-export default connect(mapStateToProps)(FullscreenBackground);
+const connected = connect(mapStateToProps)(FullscreenBackground);
+export default withRouter(connected);

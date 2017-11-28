@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import styled from 'styled-components';
 
+import { backgroundBlurRadius } from './../../utils/constants';
 import LoginCard from './../../components/LoginCard';
 
 import { setBackgroundBlur, showLoginCard } from '../../ducks/app';
@@ -18,7 +19,7 @@ const ViewWrapper = styled.div`
 class LoginView extends React.Component {
 
   onClick = () => {
-    this.props.setBackgroundBlur(50);
+    this.props.setBackgroundBlur(backgroundBlurRadius);
     this.props.showLoginCard();
   }
 
