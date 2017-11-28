@@ -1,7 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
 
+import ArrowDropUpIcon from 'material-ui-icons/ArrowDropUp';
+import ArrowDropDownIcon from 'material-ui-icons/ArrowDropDown';
+
 import { colorTeal } from './../../../utils/theme'
+import { colorRed } from './../../../utils/theme'
 
 const defaultPrice = 27.41
 
@@ -29,13 +33,25 @@ class PredictionPrice extends React.Component {
     const { price } = this.state
     const randomBoolean = Math.random() >= 0.5;
     const randomFactor = (Math.random() / 100)
-    const newPrice = randomBoolean ? defaultPrice * (1 + randomFactor) : defaultPrice * (1 - randomFactor)
-    this.setState({price: newPrice.toFixed(2)})
+    let newPrice = randomBoolean ? defaultPrice * (1 + randomFactor) : defaultPrice * (1 - randomFactor)
+    newPrice = newPrice.toFixed(2)
+    this.setState({price: newPrice, previousPrice: this.state.price})
+  }
+
+  renderIndicator = () => {
+    if (this.state.quality >= this.state.previousPrice) {
+      return <ArrowDropUpIcon style={{color: colorTeal}}/>
+    } else {
+      return <ArrowDropDownIcon style={{color: colorRed}}/>
+    }
   }
 
   render() {
     return (
-      <Price>{this.state.price} EUR/MW</Price>
+      <Price>
+        {this.renderIndicator()}
+        <span>{this.state.price} EUR/MW</span>
+      </Price>
     )
   }
 }

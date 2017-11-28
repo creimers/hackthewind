@@ -1,7 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
+import ArrowDropUpIcon from 'material-ui-icons/ArrowDropUp';
+import ArrowDropDownIcon from 'material-ui-icons/ArrowDropDown';
 
 import { colorTeal } from './../../../utils/theme'
+import { colorRed } from './../../../utils/theme'
 
 const defaultQuality = 91.2
 
@@ -29,13 +32,25 @@ class PredictionQuality extends React.Component {
     const { quality } = this.state
     const randomBoolean = Math.random() >= 0.5;
     const randomFactor = (Math.random() / 10)
-    const newPower = randomBoolean ? defaultQuality * (1 + randomFactor) : defaultQuality * (1 - randomFactor)
-    this.setState({quality: newPower.toFixed(2)})
+    let newQuality = randomBoolean ? defaultQuality * (1 + randomFactor) : defaultQuality * (1 - randomFactor)
+    newQuality = newQuality.toFixed(2)
+    this.setState({quality: newQuality, previousQuality: this.state.quality})
+  }
+
+  renderIndicator = () => {
+    if (this.state.quality >= this.state.previousQuality) {
+      return <ArrowDropUpIcon style={{color: colorTeal}}/>
+    } else {
+      return <ArrowDropDownIcon style={{color: colorRed}}/>
+    }
   }
 
   render() {
     return (
-      <Quality>{this.state.quality} %</Quality>
+      <Quality>
+        {this.renderIndicator()}
+        <span>{this.state.quality} %</span>
+      </Quality>
     )
   }
 }
