@@ -26,7 +26,11 @@ class PowerWidget extends React.Component {
   }
 
   componentDidMount() {
-    setInterval(() => this.randomizePower(), 2000)
+    this.interval = setInterval(() => this.randomizePower(), 2000)
+  }
+
+  componentWillUnmount() {
+    clearInterval(this.interval);
   }
 
   randomizePower = () => {

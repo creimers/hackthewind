@@ -26,7 +26,11 @@ class PredictionPrice extends React.Component {
   }
 
   componentDidMount() {
-    setInterval(() => this.randomizePrice(), 4500)
+    this.interval = setInterval(() => this.randomizePrice(), 4500)
+  }
+
+  componentWillUnmount() {
+    clearInterval(this.interval);
   }
 
   randomizePrice = () => {

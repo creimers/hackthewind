@@ -25,7 +25,11 @@ class PredictionQuality extends React.Component {
   }
 
   componentDidMount() {
-    setInterval(() => this.randomizeQuality(), 2000)
+   this.interval = setInterval(() => this.randomizeQuality(), 2000)
+  }
+
+  componentWillUnmount() {
+    clearInterval(this.interval);
   }
 
   randomizeQuality = () => {

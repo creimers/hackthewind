@@ -21,6 +21,7 @@ class ParkDetailView extends React.Component {
     return (
       <SlideUp>
         <ViewWrapper>
+          <h1>Live Dashboard</h1>
           <Grid container>
 
             <Grid item xs={12} sm={6}>

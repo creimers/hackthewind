@@ -16,6 +16,7 @@ class ParkListView extends React.Component {
     return (
       <ViewWrapper>
         <SlideUp>
+          <h1>Park List</h1>
           <ParkList />
         </SlideUp>
       </ViewWrapper>
