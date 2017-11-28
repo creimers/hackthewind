@@ -6,6 +6,9 @@ import IconButton from 'material-ui/IconButton';
 import PowerSettingsNewIcon from 'material-ui-icons/PowerSettingsNew';
 import Toolbar from 'material-ui/Toolbar';
 import { withRouter } from 'react-router'
+import { connect } from 'react-redux';
+
+import { showLoginCard } from './../../ducks/app';
 
 
 const height = 64;
@@ -33,6 +36,7 @@ const InnerToolbar = styled.div`
 class TopBar extends React.Component {
 
   logout = () => {
+    this.props.showLoginCard();
     const { history } = this.props;
     history.push('/');
   }
@@ -63,5 +67,15 @@ class TopBar extends React.Component {
   }
 }
 
-// TODO: PropTypes
-export default withRouter(TopBar);
+const mapStateToProps = (state) => {
+  return {
+  };
+};
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    showLoginCard: () => dispatch(showLoginCard()),
+  };
+};
+const connected = connect(mapStateToProps, mapDispatchToProps)(TopBar);
+export default withRouter(connected);
