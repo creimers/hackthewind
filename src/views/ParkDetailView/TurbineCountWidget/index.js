@@ -2,9 +2,6 @@ import React from 'react';
 import styled from 'styled-components';
 
 import { colorTeal } from './../../../utils/theme'
-import { colorRed } from './../../../utils/theme'
-
-const defaultPrice = 27.41
 
 const Price = styled.div`
   color: ${colorTeal};

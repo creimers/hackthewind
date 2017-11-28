@@ -1,5 +1,5 @@
 import React from 'react';
-import Card, { CardContent, CardHeader } from 'material-ui/Card';
+import Card, { CardContent } from 'material-ui/Card';
 import styled from 'styled-components'
 
 import { colorTeal } from './../../../utils/theme'

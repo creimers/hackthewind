@@ -1,7 +1,6 @@
 import React from 'react';
-import List, { ListItem, ListItemIcon, ListItemText } from 'material-ui/List';
+import List, { ListItem, ListItemText } from 'material-ui/List';
 import Card, { CardContent } from 'material-ui/Card';
-import { darkBg } from './../../utils/theme'
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 

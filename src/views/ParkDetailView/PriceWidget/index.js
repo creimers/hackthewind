@@ -34,7 +34,6 @@ class PredictionPrice extends React.Component {
   }
 
   randomizePrice = () => {
-    const { price } = this.state
     const randomBoolean = Math.random() >= 0.5;
     const randomFactor = (Math.random() / 100)
     let newPrice = randomBoolean ? defaultPrice * (1 + randomFactor) : defaultPrice * (1 - randomFactor)
