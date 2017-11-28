@@ -14,12 +14,12 @@ const ListWrapper = styled.div`
 class ParkListView extends React.Component {
   render() {
     return (
-      <ViewWrapper>
-        <SlideUp>
+      <SlideUp>
+        <ViewWrapper>
           <h1>Park List</h1>
           <ParkList />
-        </SlideUp>
-      </ViewWrapper>
+        </ViewWrapper>
+      </SlideUp>
     )
   }
 }

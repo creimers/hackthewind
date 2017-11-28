@@ -12,6 +12,7 @@ import PowerWidget from './PowerWidget'
 import PredictionQualityWidget from './PredictionQualityWidget'
 import PriceWidget from './PriceWidget'
 import StorageWidget from './StorageWidget'
+import TurbineCountWidget from './TurbineCountWidget'
 
 
 class ParkDetailView extends React.Component {
@@ -23,6 +24,12 @@ class ParkDetailView extends React.Component {
         <ViewWrapper>
           <h1>Live Dashboard</h1>
           <Grid container>
+
+            <Grid item xs={12} sm={6}>
+              <Widget title="Turbines">
+                <TurbineCountWidget />
+              </Widget>
+            </Grid>
 
             <Grid item xs={12} sm={6}>
               <Widget title="Power">
@@ -48,11 +55,6 @@ class ParkDetailView extends React.Component {
               </Widget>
             </Grid>
 
-            <Grid item xs={12} sm={6}>
-              <Widget title="What else?">
-
-              </Widget>
-            </Grid>
 
           </Grid>
         </ViewWrapper>

@@ -30,6 +30,7 @@ const RouteWrapper = styled.div`
   overflow-y: scroll;
   padding-left: 15px;
   padding-right: 15px;
+  padding-bottom: 50px;
 `;
 
 

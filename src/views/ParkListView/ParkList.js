@@ -1,13 +1,10 @@
 import React from 'react';
 import List, { ListItem, ListItemIcon, ListItemText } from 'material-ui/List';
+import Card, { CardContent } from 'material-ui/Card';
 import { darkBg } from './../../utils/theme'
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 
-
-const baseStyles = {
-  backgroundColor: darkBg,
-}
 
 class ParkList extends React.Component {
 
@@ -35,9 +32,11 @@ class ParkList extends React.Component {
 
   render() {
     return (
-      <div style={{...baseStyles}}>
-        {this.renderParkList()}
-      </div>
+      <Card>
+        <CardContent>
+          {this.renderParkList()}
+        </CardContent>
+      </Card>
     )
   }
 
