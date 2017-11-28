@@ -10,6 +10,8 @@ import blue from 'material-ui/colors/blue';
 // export const red = '#E6716D';
 // export const blue = '#00A2FF';
 
+export const darkBg = '#212121';
+
 
 const theme = createMuiTheme({
   palette: {
