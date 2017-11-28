@@ -82,6 +82,7 @@ class LoginCard extends React.Component {
                     label="Email"
                     margin="normal"
                     fullWidth
+                    value={this.state.username}
                   />
                 </div>
                 <div>
@@ -90,6 +91,7 @@ class LoginCard extends React.Component {
                     margin="normal"
                     type="password"
                     fullWidth
+                    value={this.state.password}
                   />
                 </div>
               </CardContent>

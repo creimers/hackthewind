@@ -4,6 +4,10 @@ import styled from 'styled-components';
 import AppBar from 'material-ui/AppBar';
 import IconButton from 'material-ui/IconButton';
 import PowerSettingsNewIcon from 'material-ui-icons/PowerSettingsNew';
+import ListIcon from 'material-ui-icons/List';
+import AccessTimeIcon from 'material-ui-icons/AccessTime';
+import DashboardIcon from 'material-ui-icons/Dashboard';
+import TimelineIcon from 'material-ui-icons/Timeline';
 import Toolbar from 'material-ui/Toolbar';
 import { withRouter } from 'react-router'
 import { connect } from 'react-redux';
@@ -34,6 +38,11 @@ const InnerToolbar = styled.div`
 
 
 class TopBar extends React.Component {
+  
+  routeTo = route => () => {
+    const { history } = this.props;
+    history.push(route)
+  }
 
   logout = () => {
     this.props.showLoginCard();
@@ -46,6 +55,28 @@ class TopBar extends React.Component {
     return location.pathname !== '/';
   }
 
+  renderDashboardIcons = () => {
+    const { location } = this.props;
+    if (location.pathname.split('/').length === 3) {
+      return (
+        <div>
+          <IconButton color="primary" onClick={this.routeTo('/parks')}>
+            <AccessTimeIcon />
+          </IconButton>
+          <IconButton color="primary" onClick={this.routeTo('/parks')}>
+            <TimelineIcon />
+          </IconButton>
+          <IconButton color="primary" onClick={this.routeTo('/parks')}>
+            <DashboardIcon />
+          </IconButton>
+          <IconButton color="primary" onClick={this.routeTo('/parks')}>
+            <ListIcon />
+          </IconButton>
+        </div>
+      )
+    }
+  }
+
   render() {
     const showToolbar = this.showToolbar();
 
@@ -55,6 +86,7 @@ class TopBar extends React.Component {
           <AppBar position="static" color="default">
             <Toolbar>
               <InnerToolbar>
+                {this.renderDashboardIcons()}
                 <IconButton color="primary" onClick={this.logout}>
                   <PowerSettingsNewIcon />
                 </IconButton>
