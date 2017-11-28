@@ -38,7 +38,8 @@ const BatteryPin = styled.div`
 const BatteryFill = styled.div`
   height: 100%;
   width: 81%;
-  background: rgba(0, 150, 136, 0.3)
+  background: ${colorTeal};
+  opacity: 0.5;
 `;
 
 const BatteryPercentage = styled.div`
