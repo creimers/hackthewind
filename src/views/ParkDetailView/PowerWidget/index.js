@@ -12,11 +12,12 @@ const Power = styled.div`
   font-size: 40px;
 `;
 
+const defaultPower = 100.01
 
 class PowerWidget extends React.Component {
 
   state = {
-    power: 100.01
+    power: defaultPower
   }
 
   componentDidMount() {
@@ -27,7 +28,7 @@ class PowerWidget extends React.Component {
     const { power } = this.state
     const randomBoolean = Math.random() >= 0.5;
     const randomFactor = (Math.random() / 100)
-    const newPower = randomBoolean ? power * (1 + randomFactor) : power * (1 - randomFactor)
+    const newPower = randomBoolean ? defaultPower * (1 + randomFactor) : defaultPower * (1 - randomFactor)
     this.setState({power: newPower.toFixed(2)})
   }
 

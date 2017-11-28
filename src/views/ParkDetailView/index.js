@@ -10,6 +10,7 @@ import SlideUp from './../../components/SlideUp';
 import Widget from './Widget'
 
 import PowerWidget from './PowerWidget'
+import PredictionQualityWidget from './PredictionQualityWidget'
 
 
 class ParkDetailView extends React.Component {
@@ -29,7 +30,7 @@ class ParkDetailView extends React.Component {
 
             <Grid item xs={12} sm={6}>
               <Widget title="Prediction Quality">
-                <p>affe</p>
+                <PredictionQualityWidget />
               </Widget>
             </Grid>
 
