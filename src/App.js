@@ -10,6 +10,7 @@ import styled from 'styled-components';
 
 import LoginView from './views/LoginView';
 import ParkListView from './views/ParkListView';
+import ParkDetailView from './views/ParkDetailView';
 
 import FullscreenBackground from './components/FullscreenBackground';
 import TopBar from './components/TopBar';
@@ -39,7 +40,8 @@ class App extends Component {
           <TopBar />
           <RouteWrapper>
             <Route exact path="/" component={LoginView}/>
-            <Route path="/parks" component={ParkListView}/>
+            <Route exact path="/parks" component={ParkListView}/>
+            <Route path="/parks/:parkSlug" component={ParkDetailView}/>
           </RouteWrapper>
         </AppWrapper>
       </Router>

@@ -46,8 +46,8 @@ const transitionStyles = {
 class LoginCard extends React.Component {
 
   state = {
-    username: '',
-    password: ''
+    username: 'info@powerisland.io',
+    password: 'asdflkjasdf'
   }
 
   login = () => {
@@ -58,7 +58,7 @@ class LoginCard extends React.Component {
      setTimeout(() => {
        this.props.logInSuccess();
        history.push('/parks');
-     }, 2000)
+     }, 1000)
   }
 
   renderProgress = () => {
@@ -71,7 +71,7 @@ class LoginCard extends React.Component {
 
   render() {
     return (
-      <Transition in={this.props.showLoginCard} timeout={duration}>
+      <Transition in={this.props.showLoginCard} timeout={500}>
         {(state) => (
             <Card style={{...cardStyles, ...transitionStyles[state]}}>
               <CardContent style={contentStyles}>
