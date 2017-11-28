@@ -1,11 +1,12 @@
 import React from 'react';
-import styled from 'styled-components';
 import { withRouter } from 'react-router'
 import Grid from 'material-ui/Grid';
-import Paper from 'material-ui/Paper';
+import { connect } from 'react-redux';
 
+import { getParkName } from './../../utils/helpers';
 import ViewWrapper from './../../components/ViewWrapper';
 import SlideUp from './../../components/SlideUp';
+
 import Widget from './Widget'
 
 import PowerWidget from './PowerWidget'
@@ -18,11 +19,11 @@ import TurbineCountWidget from './TurbineCountWidget'
 class ParkDetailView extends React.Component {
   render() {
     const {match} = this.props;
-    const park = match.params.parkSlug
+    const parkName = getParkName(this.props.parks, match.params.parkSlug)
     return (
       <SlideUp>
         <ViewWrapper>
-          <h1>Live Dashboard</h1>
+          <h1>Live Dashboard {parkName}</h1>
           <Grid container>
 
             <Grid item xs={12} sm={6}>
@@ -63,4 +64,20 @@ class ParkDetailView extends React.Component {
   }
 }
 
-export default withRouter(ParkDetailView);
+const mapStateToProps = (state) => {
+  return {
+    parks: state.parks.parks,
+  };
+};
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+  };
+};
+
+const connected = connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(ParkDetailView);
+
+export default withRouter(connected);
