@@ -11,6 +11,7 @@ import Widget from './Widget'
 
 import PowerWidget from './PowerWidget'
 import PredictionQualityWidget from './PredictionQualityWidget'
+import PriceWidget from './PriceWidget'
 
 
 class ParkDetailView extends React.Component {
@@ -36,7 +37,7 @@ class ParkDetailView extends React.Component {
 
             <Grid item xs={12} sm={6}>
               <Widget title="Price">
-                <p>affe</p>
+                <PriceWidget />
               </Widget>
             </Grid>
 
