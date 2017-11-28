@@ -5,17 +5,10 @@ import Grid from 'material-ui/Grid';
 import Paper from 'material-ui/Paper';
 import Card, { CardActions, CardContent } from 'material-ui/Card';
 
+import ViewWrapper from './../../components/ViewWrapper';
 import SlideUp from './../../components/SlideUp';
 import Widget from './Widget'
 
-
-const DashboardWrapper = styled.div`
-  display: block;
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-  margin-top: 25px;
-`
 
 
 class ParkDetailView extends React.Component {
@@ -24,7 +17,7 @@ class ParkDetailView extends React.Component {
     const park = match.params.parkSlug
     return (
       <SlideUp>
-        <DashboardWrapper>
+        <ViewWrapper>
           <Grid container>
 
             <Grid item xs={12} sm={6}>
@@ -46,7 +39,7 @@ class ParkDetailView extends React.Component {
             </Grid>
 
           </Grid>
-        </DashboardWrapper>
+        </ViewWrapper>
       </SlideUp>
     )
   }
