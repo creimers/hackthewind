@@ -29,9 +29,11 @@ const today = new Date()
 
 const PickerRow = styled.div`
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   width: 100%;
   flex-wrap: wrap;
+  margin-bottom: 15px;
+  margin-top: 15px;
 `;
 
 const PickerWrapper = styled.div`

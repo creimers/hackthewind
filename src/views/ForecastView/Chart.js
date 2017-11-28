@@ -1,6 +1,7 @@
 import React from 'react';
 import {LineChart, Line, XAxis, YAxis, Tooltip, Legend} from 'recharts';
 import Dimensions from 'react-dimensions'
+import pink from 'material-ui/colors/pink';
 
 const generateFakeData = () => {
   const hours = 24
@@ -25,7 +26,7 @@ class Chart extends React.Component {
         <YAxis stroke="white"/>
         <Tooltip/>
         <Legend />
-        <Line type="monotone" name="Power [MW]"dataKey="power" stroke="#8884d8" />
+        <Line type="monotone" name="Power [MW]"dataKey="power" stroke={pink['500']}/>
       </LineChart>
     )
   }

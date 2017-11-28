@@ -45,7 +45,7 @@ const transitionStyles = {
 class LoginCard extends React.Component {
 
   state = {
-    username: 'info@powerisland.io',
+    username: 'info@vento.io',
     password: 'asdflkjasdf'
   }
 
