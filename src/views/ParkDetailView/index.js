@@ -26,31 +26,31 @@ class ParkDetailView extends React.Component {
           <h1>Live Dashboard {parkName}</h1>
           <Grid container>
 
-            <Grid item xs={12} sm={6}>
+            <Grid item xs={12} sm={6} md={4}>
               <Widget title="Turbines">
                 <TurbineCountWidget />
               </Widget>
             </Grid>
 
-            <Grid item xs={12} sm={6}>
+            <Grid item xs={12} sm={6} md={4}>
               <Widget title="Power">
                 <PowerWidget />
               </Widget>
             </Grid>
 
-            <Grid item xs={12} sm={6}>
+            <Grid item xs={12} sm={6} md={4}>
               <Widget title="Prediction Quality">
                 <PredictionQualityWidget />
               </Widget>
             </Grid>
 
-            <Grid item xs={12} sm={6}>
+            <Grid item xs={12} sm={6} md={4}>
               <Widget title="Price">
                 <PriceWidget />
               </Widget>
             </Grid>
 
-            <Grid item xs={12} sm={6}>
+            <Grid item xs={12} sm={6} md={4}>
               <Widget title="Storage">
                 <StorageWidget />
               </Widget>

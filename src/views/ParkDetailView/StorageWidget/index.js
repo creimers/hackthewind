@@ -39,7 +39,7 @@ const BatteryFill = styled.div`
   height: 100%;
   width: 81%;
   background: ${colorTeal};
-  opacity: 0.5;
+  opacity: 0.3;
 `;
 
 const BatteryPercentage = styled.div`
