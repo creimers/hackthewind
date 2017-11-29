@@ -1,21 +1,9 @@
 import React from 'react';
+import Loadable from 'react-loadable';
 
-import ViewWrapper from './../../components/ViewWrapper';
-import SlideUp from './../../components/SlideUp';
-import ParkList from './ParkList';
+const LazyParkListView = Loadable({
+  loader: () => import('./Lazy.js'),
+  loading: () => <div></div>,
+});
 
-
-class ParkListView extends React.Component {
-  render() {
-    return (
-      <SlideUp>
-        <ViewWrapper>
-          <h1>Park List</h1>
-          <ParkList />
-        </ViewWrapper>
-      </SlideUp>
-    )
-  }
-}
-
-export default ParkListView;
+export default LazyParkListView
