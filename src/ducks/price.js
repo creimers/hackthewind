@@ -16,12 +16,13 @@ export const fetchPriceSuccess = (data, dateString) => {
 }
 
 export const fetchPriceData = (dateString) => {
+  console.log(dateString)
   return dispatch => {
     dispatch(fetchPriceRequest())
     const year = dateString.split('-')[0]
     const month = dateString.split('-')[1]
     const day = dateString.split('-')[2]
-    const url = `https://www.eex.com/data//view/data/detail/power-auction-spot-v2/${year}/${month}.${day}.json`
+    const url = `https://cdn.rawgit.com/creimers/hackthewind/a8a836a7/src/data/${year}.${month}.${day}.json`
     return fetch(url, { mode: 'cors' })
       .then(response => response.text())
       .then(json => dispatch(fetchPriceSuccess(json, dateString)))
