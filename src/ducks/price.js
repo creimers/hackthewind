@@ -16,7 +16,6 @@ export const fetchPriceSuccess = (data, dateString) => {
 }
 
 export const fetchPriceData = (dateString) => {
-  console.log(dateString)
   return dispatch => {
     dispatch(fetchPriceRequest())
     const year = dateString.split('-')[0]
@@ -24,7 +23,7 @@ export const fetchPriceData = (dateString) => {
     const day = dateString.split('-')[2]
     const url = `https://cdn.rawgit.com/creimers/hackthewind/a8a836a7/src/data/${year}.${month}.${day}.json`
     return fetch(url, { mode: 'cors' })
-      .then(response => response.text())
+      .then(response => response.json())
       .then(json => dispatch(fetchPriceSuccess(json, dateString)))
   }
 }
@@ -44,7 +43,9 @@ const parkReducer = (state=defaultState, action) => {
       return {
         ...state,
         isFetching: false,
-        pricesPerDate: {...state.pricesPerDate, [action.dateString]: action.data}
+        pricesPerDate: {
+          ...state.pricesPerDate,
+          [action.dateString]: action.data.data[6]}
       }
 
     default:
