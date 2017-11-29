@@ -20,7 +20,8 @@ const generatePowerData = (fromDate, toDate) => {
   return daysArray.map((day, index) => {
     return {
       date: moment(fromDate).add(index, 'd').format('YYYY.MM.DD'),
-      power: Math.random() * 10
+      power: Math.random() * 10,
+      revenue: Math.random() * 25
     } 
   })
 }
