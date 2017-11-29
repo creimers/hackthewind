@@ -1,6 +1,5 @@
 import React from 'react';
 import { MuiThemeProvider, createMuiTheme } from 'material-ui/styles';
-// import teal from 'material-ui/colors/teal';
 import blueGrey from 'material-ui/colors/blueGrey';
 import red from 'material-ui/colors/red';
 import blue from 'material-ui/colors/blue';
@@ -8,8 +7,6 @@ import blue from 'material-ui/colors/blue';
 export const darkBg = '#212121';
 export const colorTeal = blue['500'];
 export const colorRed = '#E6716D';
-
-
 
 const theme = createMuiTheme({
   palette: {

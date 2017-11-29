@@ -14,6 +14,7 @@ import PredictionQualityWidget from './PredictionQualityWidget'
 import PriceWidget from './PriceWidget'
 import StorageWidget from './StorageWidget'
 import TurbineCountWidget from './TurbineCountWidget'
+import MapWidget from './MapWidget'
 
 
 class ParkDetailView extends React.Component {
@@ -53,6 +54,12 @@ class ParkDetailView extends React.Component {
             <Grid item xs={12} sm={6} md={4}>
               <Widget title="Storage">
                 <StorageWidget />
+              </Widget>
+            </Grid>
+
+            <Grid item xs={12} sm={6} md={4}>
+              <Widget title="Location">
+                <MapWidget />
               </Widget>
             </Grid>
 
