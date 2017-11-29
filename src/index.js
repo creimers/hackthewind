@@ -5,6 +5,7 @@ import App from './App';
 import { Provider } from 'react-redux'
 import { applyMiddleware, createStore } from 'redux'
 import logger from 'redux-logger'
+import thunk from 'redux-thunk';
 
 import Theme from './utils/theme';
 
@@ -12,7 +13,7 @@ import rootReducer from './ducks'
 
 let store = createStore(
   rootReducer,
-  applyMiddleware(logger)
+  applyMiddleware(logger, thunk)
 );
 
 const Root = () => (
